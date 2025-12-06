@@ -24,6 +24,27 @@ h1 {
     text-align: center;
     magin: 0;
 }
+#lookup-country {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+#lookup-cities {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
 
 table {
     width: 100%;
