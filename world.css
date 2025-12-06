@@ -22,9 +22,42 @@ body {
 h1 {
     font size: 1.5em;
     text-align: center;
-    color: #333;
     magin: 0;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
+th {
+    border: 1px solid #000;       
+    background-color: #white;      
+    color: black;                
+    padding: 10px;
+    text-align: left;
+}
+
+
+td {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f4f6f9;
+    color: black;           
+}
+
+tr:nth-child(even) {
+    background-color: white;
+    color: black;      
+}
+
+
 
 #container {
     max-width: 700px;

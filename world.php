@@ -4,6 +4,9 @@ $username = 'lab5_user';
 $password = 'password123';
 $dbname = 'world';
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", 
                     $username, 
@@ -29,11 +32,32 @@ try {
     exit;
 }
 
-// Output HTML
+
+if (!empty($r)) {
+    echo "<table>";
+    echo "<thead>";
+    echo "<tr>";
+    echo "<th>Country Name</th>";
+    echo "<th>Continent</th>";
+    echo "<th>Independence Year</th>";
+    echo "<th>Head of State</th>";
+    echo "</tr>";
+    echo "</thead>";
+    echo "<tbody>";
+    
+    foreach ($r as $row) {
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['continent']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['independence_year']) . 
+"</td>";
+        echo "<td>" . htmlspecialchars($row['head_of_state']) . "</td>";
+        echo "</tr>";
+    }
+    
+    echo "</tbody>";
+    echo "</table>";
+} else {
+    echo "<p>No countries found.</p>";
+}
 ?>
-<ul>
-<?php foreach ($r as $row): ?>
-  <li><?= htmlspecialchars($row['name']) . ' is ruled by ' . 
-htmlspecialchars($row['head_of_state']); ?></li>
-<?php endforeach; ?>
-</ul>
